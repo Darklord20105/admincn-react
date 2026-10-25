@@ -26,6 +26,11 @@ import VerifyEmail from "./views/pages/auth/verify-email";
 import TwoSteps from "./views/pages/auth/two-steps";
 import NotFound from "./views/pages/misc/error-page";
 
+import DataTable from "./views/datatables";
+import HorizontalForm from "./views/forms/form-layouts/horizontal";
+import VerticalForm from "./views/forms/form-layouts/vertical";
+import FormValidation from "./views/forms/form-validation";
+
 export default function App() {
   return (
     <ThemeProvider>
@@ -40,60 +45,50 @@ export default function App() {
           <Route path="/pages/auth/two-steps" element={<TwoSteps />} />
           <Route path="/pages/misc/error-page" element={<NotFound />} />
 
-          {/* Dashboard pages — inside AppLayout */}
+          {/* Application pages — inside AppLayout */}
           <Route element={<AppLayout />}>
             <Route
               path="/"
               element={<Navigate to="/dashboard/orders" replace />}
             />
 
-            {/* Dashboard */}
-            <Route
-              path="/dashboard"
-              element={<Dashboard />}
-            />
-            <Route
-              path="/dashboard/orders"
-              element={<OrdersDashboard />}
-            />
+            {/* Dashboards */}
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard/orders" element={<OrdersDashboard />} />
 
-            {/* Mail */}
-            <Route 
-              path="/apps/mail" 
-              element={<MailApp />} 
-            />
-
-            {/* Calendar */}
-            <Route 
-              path="/apps/calendar" 
-              element={<EventCalendar />} 
-            />
-
-            {/* Users */}
-            <Route
-              path="/apps/users/list"
-              element={<UserListApp />}
-            />
-            <Route
-              path="/apps/users/view"
-              element={<UserViewApp />}
-            />
+            {/* Apps */}
+            <Route path="/apps/mail" element={<MailApp />} />
+            <Route path="/apps/calendar" element={<EventCalendar />} />
+            <Route path="/apps/users/list" element={<UserListApp />} />
+            <Route path="/apps/users/view" element={<UserViewApp />} />
 
             {/* User pages */}
+            <Route path="/pages/user-profile" element={<UserProfile />} />
+            <Route path="/pages/user-settings" element={<UserSetting />} />
+
+            {/* Data tables */}
+            <Route path="/datatable" element={<DataTable />} />
+
+            {/* Form layouts */}
             <Route
-              path="/pages/user-profile"
-              element={<UserProfile />}
+              path="/forms/form-layouts/horizontal"
+              element={<HorizontalForm />}
             />
             <Route
-              path="/pages/user-settings"
-              element={<UserSetting />}
+              path="/forms/form-layouts/vertical"
+              element={<VerticalForm />}
+            />
+
+            {/* Form validation */}
+            <Route
+              path="/forms/form-validation"
+              element={<FormValidation />}
             />
           </Route>
 
           {/* Unknown routes */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-
       </BrowserRouter>
     </ThemeProvider>
   );
