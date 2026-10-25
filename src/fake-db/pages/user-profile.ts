@@ -110,9 +110,9 @@ export const db: UserProfilePageData = {
     {
       id: 'upp-002',
       name: 'Nimbus Analytics Portal',
-      type: 'Next Project',
-      logo: '/images/brands/next-logo.webp',
-      logoDark: '/images/brands/next-logo-dark.webp',
+      type: 'Web Development',
+      logo: '/images/brands/react-logo.webp',
+      logoDark: '/images/brands/react-logo.webp',
       leader: 'Liam Cooper',
       team: [
         { avatar: '/images/avatars/avatar-2.webp', initials: 'LC' },
@@ -199,9 +199,9 @@ export const db: UserProfilePageData = {
     {
       id: 'upp-008',
       name: 'Quasar Support Desk',
-      type: 'Next Project',
-      logo: '/images/brands/next-logo.webp',
-      logoDark: '/images/brands/next-logo-dark.webp',
+      type: 'Web Development',
+      logo: '/images/brands/react-logo.webp',
+      logoDark: '/images/brands/react-logo.webp',
       leader: 'Jacob Lee',
       team: [
         { avatar: '/images/avatars/avatar-3.webp', initials: 'JL' },
